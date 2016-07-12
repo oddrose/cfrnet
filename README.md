@@ -3,6 +3,20 @@ Counterfactual Regression using Balancing Neural Networks as developed by Johans
 
 cfrnet is implemented in Python using TensorFlow and NumPy.
 
+# Code
+
+The core components of cfrnet, i.e. the TensorFlow graph, is contained in cfr_net.py.
+A simple training script is contained in cfr_train_simple.py. 
+
+# Examples
+
+In the root directory there is an example script called run_simple.sh which calls the python script cfr_train_simple.py. This example trains a counterfactual regression model on a single realization of the simulated IHDP data (see references), contained in data/ihdp_sample.csv. It creates a folder called results/single_\<config & timestamp\>/ which contains 5 files: 
+
+* config.txt - The configuration used for the run
+* log.txt - A log file
+* loss.csv - The objective, factual, counterfactual and imbalance losses over time
+* y_pred.csv - The predicted factual and counterfactual outputs for all units)
+* results.npz - A numpy array file with the fields "pred" and "loss" which contains the same output as the previous two files.
 
 # References
 Uri Shalit, Fredrik D. Johansson & David Sontag. [Bounding and Minimizing Counterfactual Error](https://arxiv.org/abs/1606.03976), arXiv:1606.03976 Preprint, 2016
